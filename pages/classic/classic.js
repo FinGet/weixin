@@ -21,6 +21,14 @@ Page({
   },
   onLeft: function(e) {
     console.log('left')
+    let index = this.data.classic.index
+    classicModel.getPrevious(index, res => {
+      this.setData({
+        classicData: res,
+        latest: classicModel.isLatest(res.index),
+        first: classicModel.isFirst(res.index)
+      })
+    })
   },
   onRight: function() {
     console.log('right')
