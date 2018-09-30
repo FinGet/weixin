@@ -7,11 +7,10 @@ Component({
     index: {
       type: Number,
       observer: function (newVal, oldVal, changedPath) {
-        if (newVal < 10) {
-          this.setData({
-            _index: '0' + newVal
-          })
-        }
+        let val = newVal < 10 ? '0'+newVal : newVal
+        this.setData({
+          _index: val 
+        })
       }
     }
   },

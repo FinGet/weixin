@@ -32,6 +32,8 @@ Component({
         like: !this.properties.like
       })
       let behavior = this.properties.like ? 'like' : 'cancel'
+
+      // 派发一个 like 事件
       this.triggerEvent('like', {
         behavior: behavior
       }, {})
